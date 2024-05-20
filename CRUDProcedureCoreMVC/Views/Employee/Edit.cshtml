@@ -1,0 +1,38 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Employee Update";
+}
+
+<h2 class="text-center mb-5">Update Employee</h2>
+
+<div class="container">
+    <form asp-action="Edit" method="post">
+
+        <!--Hide field for EmployeeId-->
+        <input type="hidden" name="EmployeeId" value="@Model.EmployeeId" />
+
+        <div class="form-group">
+            <label for="EmployeeName">Name</label>
+            <input type="text" class="form-control" id="EmployeeName" name="EmployeeName" value="@Model.EmployeeName" required />
+        </div>
+        <div class="form-group">
+            <label for="EmployeeEmail">Email</label>
+            <input type="email" class="form-control" id="EmployeeEmail" name="EmployeeEmail" value="@Model.EmployeeEmail" required />
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" value="@Model.Password" required />
+        </div>
+        <div class="form-group">
+            <label for="Address">Address</label>
+            <input class="form-control" id="Address" name="Address" value="@Model.Address" required />
+        </div>
+        <div class="form-group">
+            <label for="LastUpdate">CreatedAt</label>
+            <input type="date" class="form-control" id="LastUpdate" name="LastUpdate" value="@Model.LastUpdate" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
